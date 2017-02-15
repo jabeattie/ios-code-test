@@ -1,0 +1,537 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4AC5D2E91E54C7E900A2219B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC5D2E81E54C7E900A2219B /* AppDelegate.swift */; };
+		4AC5D2EB1E54C7E900A2219B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC5D2EA1E54C7E900A2219B /* ViewController.swift */; };
+		4AC5D2EE1E54C7E900A2219B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4AC5D2EC1E54C7E900A2219B /* Main.storyboard */; };
+		4AC5D2F01E54C7E900A2219B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4AC5D2EF1E54C7E900A2219B /* Assets.xcassets */; };
+		4AC5D2F31E54C7E900A2219B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4AC5D2F11E54C7E900A2219B /* LaunchScreen.storyboard */; };
+		4AC5D2FE1E54C7E900A2219B /* FarmdropTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC5D2FD1E54C7E900A2219B /* FarmdropTests.swift */; };
+		4AC5D3091E54C7E900A2219B /* FarmdropUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC5D3081E54C7E900A2219B /* FarmdropUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4AC5D2FA1E54C7E900A2219B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4AC5D2DD1E54C7E900A2219B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4AC5D2E41E54C7E900A2219B;
+			remoteInfo = Farmdrop;
+		};
+		4AC5D3051E54C7E900A2219B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4AC5D2DD1E54C7E900A2219B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4AC5D2E41E54C7E900A2219B;
+			remoteInfo = Farmdrop;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		4AC5D2E51E54C7E900A2219B /* Farmdrop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Farmdrop.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4AC5D2E81E54C7E900A2219B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		4AC5D2EA1E54C7E900A2219B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4AC5D2ED1E54C7E900A2219B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4AC5D2EF1E54C7E900A2219B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4AC5D2F21E54C7E900A2219B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		4AC5D2F41E54C7E900A2219B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4AC5D2F91E54C7E900A2219B /* FarmdropTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FarmdropTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4AC5D2FD1E54C7E900A2219B /* FarmdropTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FarmdropTests.swift; sourceTree = "<group>"; };
+		4AC5D2FF1E54C7E900A2219B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4AC5D3041E54C7E900A2219B /* FarmdropUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FarmdropUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4AC5D3081E54C7E900A2219B /* FarmdropUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FarmdropUITests.swift; sourceTree = "<group>"; };
+		4AC5D30A1E54C7E900A2219B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4AC5D2E21E54C7E900A2219B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4AC5D2F61E54C7E900A2219B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4AC5D3011E54C7E900A2219B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4AC5D2DC1E54C7E900A2219B = {
+			isa = PBXGroup;
+			children = (
+				4AC5D2E71E54C7E900A2219B /* Farmdrop */,
+				4AC5D2FC1E54C7E900A2219B /* FarmdropTests */,
+				4AC5D3071E54C7E900A2219B /* FarmdropUITests */,
+				4AC5D2E61E54C7E900A2219B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4AC5D2E61E54C7E900A2219B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4AC5D2E51E54C7E900A2219B /* Farmdrop.app */,
+				4AC5D2F91E54C7E900A2219B /* FarmdropTests.xctest */,
+				4AC5D3041E54C7E900A2219B /* FarmdropUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4AC5D2E71E54C7E900A2219B /* Farmdrop */ = {
+			isa = PBXGroup;
+			children = (
+				4AC5D2E81E54C7E900A2219B /* AppDelegate.swift */,
+				4AC5D2EA1E54C7E900A2219B /* ViewController.swift */,
+				4AC5D2EC1E54C7E900A2219B /* Main.storyboard */,
+				4AC5D2EF1E54C7E900A2219B /* Assets.xcassets */,
+				4AC5D2F11E54C7E900A2219B /* LaunchScreen.storyboard */,
+				4AC5D2F41E54C7E900A2219B /* Info.plist */,
+			);
+			path = Farmdrop;
+			sourceTree = "<group>";
+		};
+		4AC5D2FC1E54C7E900A2219B /* FarmdropTests */ = {
+			isa = PBXGroup;
+			children = (
+				4AC5D2FD1E54C7E900A2219B /* FarmdropTests.swift */,
+				4AC5D2FF1E54C7E900A2219B /* Info.plist */,
+			);
+			path = FarmdropTests;
+			sourceTree = "<group>";
+		};
+		4AC5D3071E54C7E900A2219B /* FarmdropUITests */ = {
+			isa = PBXGroup;
+			children = (
+				4AC5D3081E54C7E900A2219B /* FarmdropUITests.swift */,
+				4AC5D30A1E54C7E900A2219B /* Info.plist */,
+			);
+			path = FarmdropUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4AC5D2E41E54C7E900A2219B /* Farmdrop */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4AC5D30D1E54C7E900A2219B /* Build configuration list for PBXNativeTarget "Farmdrop" */;
+			buildPhases = (
+				4AC5D2E11E54C7E900A2219B /* Sources */,
+				4AC5D2E21E54C7E900A2219B /* Frameworks */,
+				4AC5D2E31E54C7E900A2219B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Farmdrop;
+			productName = Farmdrop;
+			productReference = 4AC5D2E51E54C7E900A2219B /* Farmdrop.app */;
+			productType = "com.apple.product-type.application";
+		};
+		4AC5D2F81E54C7E900A2219B /* FarmdropTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4AC5D3101E54C7E900A2219B /* Build configuration list for PBXNativeTarget "FarmdropTests" */;
+			buildPhases = (
+				4AC5D2F51E54C7E900A2219B /* Sources */,
+				4AC5D2F61E54C7E900A2219B /* Frameworks */,
+				4AC5D2F71E54C7E900A2219B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4AC5D2FB1E54C7E900A2219B /* PBXTargetDependency */,
+			);
+			name = FarmdropTests;
+			productName = FarmdropTests;
+			productReference = 4AC5D2F91E54C7E900A2219B /* FarmdropTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		4AC5D3031E54C7E900A2219B /* FarmdropUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4AC5D3131E54C7E900A2219B /* Build configuration list for PBXNativeTarget "FarmdropUITests" */;
+			buildPhases = (
+				4AC5D3001E54C7E900A2219B /* Sources */,
+				4AC5D3011E54C7E900A2219B /* Frameworks */,
+				4AC5D3021E54C7E900A2219B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4AC5D3061E54C7E900A2219B /* PBXTargetDependency */,
+			);
+			name = FarmdropUITests;
+			productName = FarmdropUITests;
+			productReference = 4AC5D3041E54C7E900A2219B /* FarmdropUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4AC5D2DD1E54C7E900A2219B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = "James Beattie";
+				TargetAttributes = {
+					4AC5D2E41E54C7E900A2219B = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = U69Y38AA58;
+						ProvisioningStyle = Automatic;
+					};
+					4AC5D2F81E54C7E900A2219B = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = U69Y38AA58;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 4AC5D2E41E54C7E900A2219B;
+					};
+					4AC5D3031E54C7E900A2219B = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = U69Y38AA58;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 4AC5D2E41E54C7E900A2219B;
+					};
+				};
+			};
+			buildConfigurationList = 4AC5D2E01E54C7E900A2219B /* Build configuration list for PBXProject "Farmdrop" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4AC5D2DC1E54C7E900A2219B;
+			productRefGroup = 4AC5D2E61E54C7E900A2219B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4AC5D2E41E54C7E900A2219B /* Farmdrop */,
+				4AC5D2F81E54C7E900A2219B /* FarmdropTests */,
+				4AC5D3031E54C7E900A2219B /* FarmdropUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4AC5D2E31E54C7E900A2219B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4AC5D2F31E54C7E900A2219B /* LaunchScreen.storyboard in Resources */,
+				4AC5D2F01E54C7E900A2219B /* Assets.xcassets in Resources */,
+				4AC5D2EE1E54C7E900A2219B /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4AC5D2F71E54C7E900A2219B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4AC5D3021E54C7E900A2219B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4AC5D2E11E54C7E900A2219B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4AC5D2EB1E54C7E900A2219B /* ViewController.swift in Sources */,
+				4AC5D2E91E54C7E900A2219B /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4AC5D2F51E54C7E900A2219B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4AC5D2FE1E54C7E900A2219B /* FarmdropTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4AC5D3001E54C7E900A2219B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4AC5D3091E54C7E900A2219B /* FarmdropUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4AC5D2FB1E54C7E900A2219B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4AC5D2E41E54C7E900A2219B /* Farmdrop */;
+			targetProxy = 4AC5D2FA1E54C7E900A2219B /* PBXContainerItemProxy */;
+		};
+		4AC5D3061E54C7E900A2219B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4AC5D2E41E54C7E900A2219B /* Farmdrop */;
+			targetProxy = 4AC5D3051E54C7E900A2219B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		4AC5D2EC1E54C7E900A2219B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4AC5D2ED1E54C7E900A2219B /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		4AC5D2F11E54C7E900A2219B /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4AC5D2F21E54C7E900A2219B /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4AC5D30B1E54C7E900A2219B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4AC5D30C1E54C7E900A2219B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4AC5D30E1E54C7E900A2219B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = U69Y38AA58;
+				INFOPLIST_FILE = Farmdrop/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.jabeattie.Farmdrop;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		4AC5D30F1E54C7E900A2219B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = U69Y38AA58;
+				INFOPLIST_FILE = Farmdrop/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.jabeattie.Farmdrop;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		4AC5D3111E54C7E900A2219B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = U69Y38AA58;
+				INFOPLIST_FILE = FarmdropTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.jabeattie.FarmdropTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Farmdrop.app/Farmdrop";
+			};
+			name = Debug;
+		};
+		4AC5D3121E54C7E900A2219B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = U69Y38AA58;
+				INFOPLIST_FILE = FarmdropTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.jabeattie.FarmdropTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Farmdrop.app/Farmdrop";
+			};
+			name = Release;
+		};
+		4AC5D3141E54C7E900A2219B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = U69Y38AA58;
+				INFOPLIST_FILE = FarmdropUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.jabeattie.FarmdropUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = Farmdrop;
+			};
+			name = Debug;
+		};
+		4AC5D3151E54C7E900A2219B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = U69Y38AA58;
+				INFOPLIST_FILE = FarmdropUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.jabeattie.FarmdropUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = Farmdrop;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4AC5D2E01E54C7E900A2219B /* Build configuration list for PBXProject "Farmdrop" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4AC5D30B1E54C7E900A2219B /* Debug */,
+				4AC5D30C1E54C7E900A2219B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4AC5D30D1E54C7E900A2219B /* Build configuration list for PBXNativeTarget "Farmdrop" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4AC5D30E1E54C7E900A2219B /* Debug */,
+				4AC5D30F1E54C7E900A2219B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		4AC5D3101E54C7E900A2219B /* Build configuration list for PBXNativeTarget "FarmdropTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4AC5D3111E54C7E900A2219B /* Debug */,
+				4AC5D3121E54C7E900A2219B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		4AC5D3131E54C7E900A2219B /* Build configuration list for PBXNativeTarget "FarmdropUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4AC5D3141E54C7E900A2219B /* Debug */,
+				4AC5D3151E54C7E900A2219B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4AC5D2DD1E54C7E900A2219B /* Project object */;
+}
