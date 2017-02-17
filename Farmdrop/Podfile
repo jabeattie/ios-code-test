@@ -1,0 +1,25 @@
+# Uncomment the next line to define a global platform for your project
+platform :ios, '9.0'
+
+target 'Farmdrop' do
+  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for Farmdrop
+  pod 'ReactiveCocoa', '~> 5.0.0'	
+  pod 'Moya/ReactiveSwift', '~> 8.0'
+  pod 'Moya-JASON/ReactiveCocoa', '1.0.0'
+  pod 'Changeset'
+  pod 'Down'
+
+  target 'FarmdropTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'FarmdropUITests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+end

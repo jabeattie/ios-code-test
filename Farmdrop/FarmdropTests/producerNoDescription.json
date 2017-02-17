@@ -1,0 +1,18 @@
+{
+    "id": 170,
+    "name": "Purton House Organics",
+    "permalink": "purton-house-organics",
+    "created_at": "2014-04-14T10:38:55.267+01:00",
+    "updated_at": "2017-01-20T17:33:11.000+00:00",
+    "images": [
+               {
+               "path": "https://fd-v5-api-release.imgix.net/assets/producer/33ceef48bff5238c88ccda3eecd3d04d3f13d618fcfb59815b0cef31350c65d1/purton_rally_540by415.jpg",
+               "position": 1
+               }
+               ],
+    "short_description": "Eh, that's a short one",
+    "description": "",
+    "location": "Purton, Wiltshire",
+    "via_wholesaler": true,
+    "wholesaler_name": "Purton House Organics"
+}

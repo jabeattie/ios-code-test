@@ -31,6 +31,32 @@ class FarmdropUITests: XCTestCase {
     func testExample() {
         // Use recording to get started writing UI tests.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
+        
+        XCUIDevice.shared().orientation = .faceUp
+        XCUIDevice.shared().orientation = .faceUp
+        
+        let app = XCUIApplication()
+        let tablesQuery = app.tables
+        let typeAProducersNameSearchField = tablesQuery.searchFields["Type a producers name"]
+        // In case of slow connectsions.
+        sleep(5)
+        typeAProducersNameSearchField.tap()
+        typeAProducersNameSearchField.typeText("Farm")
+        
+        let parkFarmStaticText = tablesQuery.staticTexts["Park Farm"]
+        XCTAssertNotNil(parkFarmStaticText)
+        parkFarmStaticText.tap()
+        
+        let scrollViewsQuery = app.scrollViews
+        scrollViewsQuery.otherElements.staticTexts["Hawkhurst, Kent"].tap()
+        
+        XCTAssertNotNil(scrollViewsQuery.otherElements.staticTexts["Hawkhurst, Kent"])
+        
+        app.navigationBars["Park Farm"].buttons["Producers"].tap()
+        typeAProducersNameSearchField.tap()
+        
+        XCTAssertEqual(typeAProducersNameSearchField.title, "")
+        
     }
     
 }

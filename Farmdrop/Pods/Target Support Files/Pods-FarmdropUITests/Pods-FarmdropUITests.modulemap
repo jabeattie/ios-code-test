@@ -1,0 +1,6 @@
+framework module Pods_FarmdropUITests {
+  umbrella header "Pods-FarmdropUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
