@@ -11,8 +11,8 @@ import ReactiveSwift
 
 class ProducerTableViewCell: UITableViewCell {
     
-    @IBOutlet var producerName: UILabel!
-    @IBOutlet var producerDescription: UILabel!
+    @IBOutlet weak var producerName: UILabel!
+    @IBOutlet weak var producerDescription: UILabel!
     
     var viewModel: DetailViewModel! {
         didSet {

@@ -14,9 +14,9 @@ import ReactiveSwift
 class DetailViewController: UIViewController {
     
     @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet var producerImage: UIImageView!
-    @IBOutlet var producerLocation: UILabel!
-    @IBOutlet var producerDescription: UITextView!
+    @IBOutlet weak var producerImage: UIImageView!
+    @IBOutlet weak var producerLocation: UILabel!
+    @IBOutlet weak var producerDescription: UITextView!
     
     @IBOutlet weak var producerImageHeightConstraint: NSLayoutConstraint!
     
