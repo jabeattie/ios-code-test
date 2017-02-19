@@ -35,20 +35,20 @@ class TableViewModel {
     
     init() {
         
-        searchString.producer.map({ (string) -> [Producer] in
+        searchString.producer.map({ [unowned self] (string) -> [Producer] in
             return string != nil && string!.characters.count > 0 ? self.producers.value.filter({ $0.name.value.contains(string!) }) : self.producers.value
         }).start({ [unowned self] (event) in
             if let val = event.value {
                 self.filteredProducers = val
             }
         })
-        producers.producer.start { (event) in
+        producers.producer.start { [unowned self] (event) in
             if let val = event.value {
                 self.filteredProducers = self.searchString.value != nil && self.searchString.value!.characters.count > 0 ? val.filter({ $0.name.value.contains(self.searchString.value!) }) : val
             }
         }
         
-        DataStore.sharedInstance.savedProducers.producer.start { (event) in
+        DataStore.sharedInstance.savedProducers.producer.start { [unowned self] (event) in
             if let val = event.value {
                 self.filteredProducers = self.searchString.value != nil && self.searchString.value!.characters.count > 0 ? val.filter({ $0.name.value.contains(self.searchString.value!) }) : val
             }
@@ -70,26 +70,30 @@ class TableViewModel {
     
     func fetchProducers(atPage page: Int) {
         canFetchMoreProducers = false
-        provider
-            .request(.showPagedProducers(page: page, numberOfProducers: Fetching.Limit))
-            .mapArray(type: Producer.self, keyPath: ["response"])
-            .start { event in
-                switch event {
-                case .value(let producers):
-                    self.producers.value.append(contentsOf: producers)
-                    if (producers.count > 0) {
+        DispatchQueue.global(qos: DispatchQoS.QoSClass.userInitiated).async { [unowned self] in
+            self.provider
+                .request(.showPagedProducers(page: page, numberOfProducers: Fetching.Limit))
+                .observe(on: QueueScheduler.init(qos: DispatchQoS.userInteractive, name: "UserInteractive", targeting: DispatchQueue.global(qos: .userInteractive)))
+                .mapArray(type: Producer.self, keyPath: ["response"])
+                .start { [unowned self] event in
+                    switch event {
+                    case .value(let producers):
+                        self.producers.value.append(contentsOf: producers)
+                        if (producers.count > 0) {
+                            self.canFetchMoreProducers = true
+                        } else {
+                            DataStore.sharedInstance.synchroniseProducers(producers: self.producers.value, completed: true)
+                        }
+                        
+                    case let .failed(error):
                         self.canFetchMoreProducers = true
-                    } else {
-                        DataStore.sharedInstance.synchroniseProducers(producers: self.producers.value, completed: true)
+                        print(error)
+                    default:
+                        break
                     }
-                    
-                case let .failed(error):
-                    self.canFetchMoreProducers = true
-                    print(error)
-                default:
-                    break
-                }
+            }
         }
+        
     }
     
     func getProducersCount() -> Int {

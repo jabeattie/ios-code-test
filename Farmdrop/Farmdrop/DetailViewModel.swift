@@ -13,7 +13,6 @@ import Result
 
 class DetailViewModel {
     
-    private let provider = ReactiveSwiftMoyaProvider<ImageService>()
     private var producer: Producer
     
     var nameText = MutableProperty<String?>(nil)
@@ -24,6 +23,9 @@ class DetailViewModel {
     var wholesalerNameText = MutableProperty<String?>(nil)
     var imagePath = MutableProperty<String?>(nil)
     var image = MutableProperty<UIImage?>(nil)
+    
+    var downloadInProgress = MutableProperty<Bool>(false)
+    var downloadProgress = MutableProperty<Double>(0)
     
     init(producer: Producer) {
         self.producer = producer
@@ -38,16 +40,41 @@ class DetailViewModel {
     
     func fetchImage() {
         guard let path = imagePath.value else { return }
-        provider.request(.downloadImage(path: path))
-            .mapImage()
-            .start { event in
-                switch event {
-                case .value(let response):
-                    self.image.value = response
-                default:
-                    break
-                }
+        guard image.value == nil else { return }
+        DispatchQueue.global(qos: DispatchQoS.QoSClass.background).async { [weak self] _ in
+            
+            if let image = self?.loadImage(imagePath: path) {
+                self?.image.value = image
+            } else {
+                self?.downloadImage(imagePath: path)
+            }
         }
+    }
+    
+    func loadImage(imagePath: String) -> UIImage? {
+        return DataStore.sharedInstance.getImageFromDocumentDirectory(imageName: imagePath)
+    }
+    
+    func downloadImage(imagePath: String) {
+        let networkActivityPlugin = NetworkActivityPlugin(networkActivityClosure: { [weak self] (changeType) in
+            switch changeType {
+            case .began:
+                self?.downloadInProgress.value = true
+            case .ended:
+                self?.downloadInProgress.value = false
+            }
+        })
         
+        let provider = ReactiveSwiftMoyaProvider<ImageService>(plugins: [networkActivityPlugin])
+        
+        provider.request(.downloadImage(path: imagePath)).mapImage().start({ [weak self] (event) in
+            switch event {
+            case .value(let response):
+                DataStore.sharedInstance.saveImageToDocumentDirectory(imageName: imagePath, image: response)
+                self?.image.value = response
+            default:
+                break
+            }
+        })
     }
 }

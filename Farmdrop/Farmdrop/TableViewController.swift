@@ -23,7 +23,11 @@ class TableViewController: UITableViewController {
         super.viewDidLoad()
         
         // Observes signal from the producerChangeset in the viewModel and updates the tableview.
-        viewModel.producerChangeset.producer.startWithValues { (edits) in
+        bindViewModel()
+    }
+    
+    func bindViewModel() {
+        viewModel.producerChangeset.producer.observe(on: UIScheduler()).startWithValues { (edits) in
             self.tableView.update(with: edits as! [Edit<Producer>])
         }
         
@@ -34,7 +38,7 @@ class TableViewController: UITableViewController {
                 if let val = event.value {
                     self.viewModel.search(searchString: val)
                 }
-        })
+            })
     }
     
     // MARK: - Table view data source
@@ -48,12 +52,12 @@ class TableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 140
+        return 160
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ProducerCell", for: indexPath) as! ProducerTableViewCell
-        cell.viewModel = viewModel.createDetailViewModel(forIndex: indexPath.row)
+        cell.setupViewModel(viewModel: viewModel.createDetailViewModel(forIndex: indexPath.row))
         return cell
     }
     

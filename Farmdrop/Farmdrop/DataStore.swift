@@ -37,7 +37,7 @@ class DataStore {
     }
     
     func loadProducers() -> Result<AnyObject?, NSError> {
-        guard let destination = destPath else { return Result.failure(generateError(code: Errors.NoDest.code, domain: Errors.NoDest.domain)) }
+        guard let destination = destPath(filePath: "\(FileNames.ProducersPlist).plist") else { return Result.failure(generateError(code: Errors.NoDest.code, domain: Errors.NoDest.domain)) }
         guard let savedData = FileManager.default.contents(atPath: destination.path) else { return Result.failure(generateError(code: Errors.NoFile.code, domain: Errors.NoFile.domain))}
         
         if let si = NSKeyedUnarchiver.unarchiveObject(with: savedData) as? [Producer] {
@@ -49,7 +49,7 @@ class DataStore {
     }
     
     func saveProducers() -> Result<AnyObject?, NSError> {
-        guard let destination = destPath else { return Result.failure(generateError(code: Errors.NoDest.code, domain: Errors.NoDest.domain)) }
+        guard let destination = destPath(filePath: "\(FileNames.ProducersPlist).plist") else { return Result.failure(generateError(code: Errors.NoDest.code, domain: Errors.NoDest.domain)) }
         let si = NSKeyedArchiver.archiveRootObject(savedProducers.value, toFile: destination.path)
         switch si {
         case true:
@@ -64,7 +64,8 @@ class DataStore {
     func preparePlistForUse() {
         let fm = FileManager.default
         guard let source = sourcePath else { return }
-        guard let destination = destPath else { return }
+        guard sourcePath != .none else { return }
+        guard let destination = destPath(filePath: "\(FileNames.ProducersPlist).plist") else { return }
         
         guard let _ = NSArray(contentsOf: source) else { return }
         
@@ -76,6 +77,17 @@ class DataStore {
                 return
             }
         }
+        
+        let dirPath = NSSearchPathForDirectoriesInDomains(.cachesDirectory, .userDomainMask, true)[0]
+        
+        var isDir : ObjCBool = false
+        if !fm.fileExists(atPath: dirPath, isDirectory: &isDir) {
+            do {
+                try fm.createDirectory(atPath: dirPath, withIntermediateDirectories: false, attributes: nil)
+            } catch let error as NSError {
+                print("Unable to create cache directory. ERROR: \(error.localizedDescription)")
+            }
+        }
     }
     
     var sourcePath: URL? {
@@ -83,12 +95,10 @@ class DataStore {
         return path
     }
     
-    var destPath: URL? {
-        guard sourcePath != .none else { return .none }
-        let dirPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
-        let dir = NSURL(fileURLWithPath: dirPath)
-        return dir.appendingPathComponent("\(FileNames.ProducersPlist).plist")
-        
+    func destPath(filePath: String) -> URL? {
+        let dirPath = NSSearchPathForDirectoriesInDomains(.cachesDirectory, .userDomainMask, true)[0]
+        let dir = URL(fileURLWithPath: dirPath)
+        return dir.appendingPathComponent(filePath)
     }
     
     func synchroniseProducers(producers: [Producer], completed: Bool) {
@@ -125,5 +135,27 @@ class DataStore {
     
     func generateError(code: Int, domain: String) -> NSError {
         return NSError(domain: domain, code: code, userInfo: nil)
+    }
+    
+    func saveImageToDocumentDirectory(imageName: String, image: UIImage){
+        let imageName = imageName.replacingOccurrences(of: "/", with: "")
+        guard let imagePath = destPath(filePath: imageName) else { return }
+        let fileManager = FileManager.default
+        guard let imageData = UIImageJPEGRepresentation(image, 0.7) else { return }
+        do {
+            try imageData.write(to: imagePath, options: Data.WritingOptions.atomicWrite)
+        } catch let error as NSError {
+            print(error.localizedDescription)
+        }
+    }
+    
+    func getImageFromDocumentDirectory(imageName: String) -> UIImage? {
+        let imageName = imageName.replacingOccurrences(of: "/", with: "")
+        guard let imagePath = destPath(filePath: imageName) else { return nil }
+        let fileManager = FileManager.default
+        if fileManager.fileExists(atPath: imagePath.path) {
+            return UIImage(contentsOfFile: imagePath.path)
+        }
+        return nil
     }
 }
